@@ -1,0 +1,3626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0134)http://sou.chinanews.com/search.do?q=sars&ps=100&start=0&type=&sort=pubtime&time_scope=0&channel=all&adv=1&day1=&day2=&field=&creator= -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="keywords" content="搜索,新闻网,中国新闻网,CNS,chinanews,中新社,中新网,视频,新闻,图片">
+		<meta name="description" content="CNS官方搜索网站，有效查找新闻、奥运报道、图片库、华人、华文教育。">
+		<meta name="author" content="redhacker(beanor#gmail.com)">
+		<title>中新网搜索</title>
+		<link rel="shortcut icon" href="http://sou.chinanews.com/favicon.ico" type="image/x-icon">
+		<link type="text/css" href="./中新网搜索_files/cnssearch-style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./中新网搜索_files/jquery.autocomplete.css">
+ <script type="text/javascript" src="./中新网搜索_files/jquery-1.11.3.min.js.下载"></script>
+ <script type="text/javascript" src="./中新网搜索_files/jquery.autocomplete.js.下载"></script>
+ <script>
+  $(document).ready(function() {
+             //解决跨域问题 ?callback=?
+             $("#q").autocomplete('test/auto.jsp?callback=?', {
+                 matchContains: true,
+                //跨域问题
+                 callback: true,
+                 minChars: 1,
+                 extraParams: {name:function(){return $('#q').val();}}, 
+                 //跨域问题
+                 dataType: "jsonp",
+                 //跨域问题
+                 jsonp: "callback",
+                 mustMatch:false,
+                 scrollHeight:300,
+                 selectFirst:false,
+                 parse: function(data) {
+                     return $.map(data, function(row) {
+                      
+                         return {
+                            data: row,
+                             value: row.name,
+                             result: row.name
+                             
+                         }
+                     });
+                 },
+                 formatItem: function(item) {
+                     return item.name;
+                }
+             }).result(function(e, item) {
+             });
+     });
+     
+ </script>			
+			
+
+		<script language="javascript">
+
+function submitFun(f) {
+  if (f == 'f1') {
+  	var q=document.sumitForm1.q.value;
+  	if(q==''){
+  		alert("请输入搜索关键字");
+  		return false;
+    }
+    if(q.indexOf("img:")!=-1){
+    	document.sumitForm1.action="imgsearch.do";
+    	q=q.replace("img:","");
+    }else if(q.indexOf("sp:")!=-1){
+    	document.sumitForm1.action="spsearch.do";
+    	q=q.replace("sp:","");
+    }
+    document.sumitForm1.q.value=q;
+	document.sumitForm1.submit();
+  } else if (f == 'f2') {
+  	var q=document.sumitForm2.q.value;
+  	if(q==''){
+  		alert("请输入搜索关键字");
+  		return false;
+    }
+    if(q.indexOf("img:")!=-1){
+    	document.sumitForm1.action="imgsearch.do";
+    	q=q.replace("img:","");
+    }else if(q.indexOf("sp:")!=-1){
+    	document.sumitForm1.action="spsearch.do";
+    	q=q.replace("sp:","");
+    }
+    document.sumitForm2.q.value=q;
+    document.sumitForm2.submit();
+  }
+}
+function queryFun(queryInfo) {
+  var qArr = queryInfo.split(":");
+  var qClass = qArr[0];
+  var qContent = qArr[1];
+  if (qClass == 'channel') {
+    document.sform.channel.value = qContent;
+  } else if (qClass == 'sort'){
+    document.sform.sort.value = qContent;
+  } else if (qClass == 'time_scope') {
+    document.sform.time_scope.value = qContent;
+  }
+  document.sform.pager.value = 0;
+  document.sform.submit();
+}
+
+
+
+function ongetkey(num){
+		document.form2.start.value=num*100;
+		document.form2.submit();
+}
+
+function onimg(){
+ if (document.sumitForm1.q.value == "") {
+   	window.location.href="imgindex.do";
+ }else{
+ 	document.imgform.q.value=document.sumitForm1.q.value;
+ 	document.imgform.submit();	
+ }
+
+}
+function onsp(){
+	 if (document.sumitForm1.q.value == "") {
+   			window.location.href="spindex.do";
+ 	 }else{
+ 	 	document.spform.q.value=document.sumitForm1.q.value;
+ 		document.spform.submit();	
+ 	}
+}
+
+
+function onweb(){
+	 if (document.sumitForm1.q.value == "") {
+   			window.location.href="index.do";
+ 	 }else{
+ 	 	document.wform.q.value=document.sumitForm1.q.value;
+ 		document.wform.submit();	
+ 	}
+}
+function onbbs(){
+	 if (document.sumitForm1.q.value == "") {
+   			window.location.href="http://sou.bbs.chinanews.com/";
+ 	 }else{
+ 	 	window.location.href="http://sou.bbs.chinanews.com/search.php?keywords="+encodeURIComponent(document.sumitForm1.q.value);
+ 	}
+}
+</script>
+			<style>
+
+.ttc {
+	text-align: left;
+	padding-left: 20px;
+}
+
+.tdiv a:link,.tdiv a:visited {
+	font-size: 14px;
+}
+
+.ttc,.ttc a:link {
+	font-size: 14px;
+	padding-bottom: 4px;
+}
+
+
+
+em {
+	color: red;
+	font-style: normal;
+}
+
+
+
+.tsdiv {
+	position: absolute;
+	top: 0px;
+	left: 110px;
+	background: transparent;
+	height: 37px;
+	width: 300px;
+	line-height: 37px;
+	text-align: center;
+}
+
+.rsimg {
+	width: 120px;
+	height: 90px;
+	border: 1px blue solid;
+	margin: 2px;
+}
+
+.shiping {
+	background-image:
+		url("http://www.chinanews.com.cn/fileftp/2009/02/2009-02-04/U76P4T47D10234F981DT20090204162127.gif")
+		;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	text-align: left;
+}
+
+/*xz*/
+body{padding:0;margin:0;border:none;}
+input,select,div,ul,li,p,a{padding:0;margin:0;border:none;}
+.q{width:387px;height:34px;padding:0 5px;float:left;border-right:None;line-height:34px; font-size:14px;
+	vertical-align:baseline; background:url(images/list_input.jpg) no-repeat;color:#737373;}
+.submitBtn {
+	float:left;
+	height:34px;
+	line-height:34px; 
+	width:100px;
+	
+	background:url(images/list_ss.jpg) no-repeat;
+	margin-left:0px;
+	cursor:pointer;
+}
+
+.search_list_top{clear: right;padding:16px 0 16px 23px;}
+.clear{clear:both;}
+.mt10{margin-top:10px;height:34px;}
+
+#search_rs_info{
+	clear:both; 
+	height:37px; 
+	line-height:37px; 
+	background-color:#f5f5f5; 
+	border-top:none;
+	margin-bottom:10px;
+}
+
+#copyright{
+	clear:both; 
+	height:30px; 
+	line-height:30px; padding:8px 0;
+	text-align:center; color:#b1b1b1;
+}
+#copyright a{color:#b1b1b1;  text-decoration:underline;}
+
+#bottom_serach_bar{
+	clear:both; 
+	margin-top:20px;
+	border:#eaeaea 1px solid; 
+	background:#fff;
+	text-align:center;
+	height:66px;
+	line-height:50%;
+}
+#bottom_serach_bar table{
+	margin-top:15px;
+	margin-bottom:10px;
+}
+
+#page_bar{
+	clear:both; 
+	font-size:14px;
+	text-align:left;
+	margin-left:13px;
+}
+#page_bar a:link{
+	color: #006699;
+	text-decoration: underline;
+}
+#page_bar a:visited{
+	color: #006699;
+	text-decoration: underline;
+}
+#page_bar a:hover{
+	color: #006699;
+	text-decoration: none;
+}
+
+#pagediv {
+	font-size: 12px;
+	font-family: "宋体", sans-serif;
+	text-align: left;
+}
+
+#pagediv a {
+	margin-right: 10px;
+	text-align: center;
+	border: 1px #e6e6e6 solid;
+	padding: 9px 14px;
+	height: 34px;
+	line-height: 34px;
+}
+
+#pagediv .thispage {
+	
+	
+	line-height: 34px;
+	color: #808080;
+	background: #eeeeee;
+	padding: 9px 14px;
+	margin-left: 0px;
+	margin-right: 10px;
+	height:34px;
+	border:#e6e6e6 1px solid;
+}
+
+#pagediv .diabledpage {
+	padding: 9px 14px;
+	height: 34px;
+	line-height: 34px;
+	color: #808080;
+	background: #eeeeee;
+	
+	margin-left: 0px;
+	margin-right: 10px;
+	border:#e6e6e6 1px solid;
+}
+
+
+
+#pagediv a:visited {
+	color: #808080;
+	text-decoration: none;
+	border: 1px #e6e6e6 solid;
+}
+
+#pagediv a:hover {
+	color: #808080;
+	text-decoration: node;
+	border: 1px #e6e6e6 solid;
+}
+
+#pagediv a:link {
+	color: #808080;
+	text-decoration: node;
+	border: 1px #e6e6e6 solid;
+}
+
+.helptext img{ vertical-align:middle;}
+</style>
+	</head>
+	<body onload="document.sumitForm1.q.focus();">
+		<!--search bar start-->
+<div class="search_list_top">
+			<form name="sumitForm1" method="post" action="http://sou.chinanews.com/search.do" onsubmit="return submitFun()" style="margin: 0; padding: 0;">
+				<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td width="8%"><a href="http://sou.chinanews.com/search.do"><img src="./中新网搜索_files/list_logo.jpg" alt="中新搜索" border="0" style="margin-right: 5px;padding-left:12px;"></a></td>
+						<td width="" valign="middle" class="ttc" style="padding-left: 20px;">
+							<b>新闻</b> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="javascript:void();" onclick="onimg();return false;">图片</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="javascript:void();" onclick="onsp();return false;">视频</a>
+							
+						</td>
+                        <td width="72%"></td>
+					</tr>
+					<tr>
+                       <td colspan="3">
+                       <div style="height:34px;" class="mt10">
+                       <div style="float:left;width:515px;">
+                         <input type="text" name="q" id="q" class="q ac_input" autocomplete="off" value="sars" maxlength="40">
+                         <input type="button" name="submitBtn" class="submitBtn" value="  " onclick="return submitFun(&#39;f1&#39;)">  
+                                <div class="clear"></div>
+                                </div> 	
+					     <div style="float:Left;width:300px;font-size:14px;padding-top:8px;" class="helptext">
+                       	   <img src="./中新网搜索_files/hand.gif">
+                            <a href="http://sou.chinanews.com/advSearch.do">
+                            <span style="color:blue;">进入高级搜索
+                            </span>
+                            </a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://sou.chinanews.com/help.jsp" target="_blank">使用帮助</a>
+                         </div>
+                         
+                         </div>
+					    </td>
+					</tr>
+				</tbody></table>
+	</form>
+<div class="clear"></div>
+		</div>
+
+		<!--search bar end-->
+		<!-- search result info start -->
+		<div id="search_rs_info">
+			<div style="float: left; width: 400px; margin-left: 23px; position: relative;">
+				
+					
+					
+      以下是为您找到的网页
+      
+							<div class="tsdiv">
+								(没有快速找到内容？可以尝试“
+								<a href="javascript:queryFun(&#39;sort:_score&#39;)" style="color: #9D0000;">按相关度</a>”搜索)
+							</div>
+						
+						
+					
+				
+			</div>
+			<div style="float: right; width: 500px; text-align: right; margin-right: 5px;color:#8d8d8d;">
+				当前显示
+				
+					
+					
+					1-100
+				
+				条，共为您找到约
+				<span style="color: red">8,286</span>篇相关的网页。
+			</div>
+		</div>
+
+
+		<table style="width: 95%; text-align: left; vertical-align: top;">
+			<tbody><tr>
+				<td width="69%" style="vertical-align: top">
+					<!-- search filter condition end -->
+					<!--news list start-->
+					<div id="news_list">
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2021/04-29/9467354.shtml" target="_blank">“第十三届健康中国论坛”举行 中成药循证评价证据指数发布</a>
+										</li>
+										<li class="news_content">(H1N1、H3N2等)、乙型流感病毒、副流感病毒I型、呼吸道合胞病毒、<em>SARS</em>病毒、新冠等多种病毒均有抑制拮抗作用。
+
+　　自新冠肺炎疫情发生以来，作为中医药治疗新冠肺炎筛选出的有效药物“三药...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2021/04-29/9467354.shtml&nbsp;&nbsp;
+											2021-04-29 22:23:15
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/04-26/9463886.shtml" target="_blank">流调员 亲上“战场”与疫情过招</a>
+										</li>
+										<li class="news_content">查吗？”“你们这样就是侵犯我们隐私！”
+
+　　一连串密集的指责“砸”向杨霄星，挂断一通持续1个多小时的安抚电话，杨霄星哭了。
+
+　　“人们对<em>SARS</em>的记忆太深了”，面对未知的病毒，每个人都在与内心的恐惧、懦弱和自私抗衡，最后战胜这些的</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/04-26/9463886.shtml&nbsp;&nbsp;
+											2021-04-26 01:15:24
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/04-23/9462211.shtml" target="_blank">《自然》最新论文分析新冠肺炎长期影响</a>
+										</li>
+										<li class="news_content">恢复后长达6个月的症状，或有助于护理策略的开发和卫生系统的规划。
+
+　　该论文称，业界已经基本掌握了新冠肺炎急性期症状的特点，但对新冠病毒(<em>SARS</em>-CoV-2)感染后的长期并发症却了解得很少。在</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/04-23/9462211.shtml&nbsp;&nbsp;
+											2021-04-23 17:42:54
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/04-19/9457999.shtml" target="_blank">一猴难求！新冠疫苗研发大战中最抢手的竟然是它？</a>
+										</li>
+										<li class="news_content">交易。”中国实验灵长类养殖开发协会秘书长张玉介绍说。
+
+　　2020年5月，由中国医学科学院医学实验动物研究所秦川领衔的多家单位合作完成的《<em>SARS</em>-CoV-2病</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/04-19/9457999.shtml&nbsp;&nbsp;
+											2021-04-19 09:16:24
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/sh/2021/04-16/9456339.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/27f20dfc-6827-4560-ba87-f6720df3174b_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/04-16/9456339.shtml" target="_blank">兰州女片警“随时待命”逾20载：将心比心 换取真心</a>
+										</li>
+										<li class="news_content">间的工作日常。
+
+　　在2020年初武汉封城的同一天，刘兰香管辖社区出现一例新冠肺炎确诊患者，作为社区综合治理工作书记助理的刘兰香，曾经历过<em>SARS</em>疫情战役，她深知疫情发生后防控的重要性，既然社区内已</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/04-16/9456339.shtml&nbsp;&nbsp;
+											2021-04-16 15:21:02
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2021/04-13/9453814.shtml" target="_blank">以岭药业连花清瘟项目获河北省科技进步一等奖</a>
+										</li>
+										<li class="news_content">转归。提出早中期积极干预治疗策略：首重病因、驱逐毒邪；先证用药、积极干预；整体调节、多靶治疗。
+
+　　基础研究取得重大突破
+
+　　该项目利用<em>SARS</em>-CoV-2(新冠病毒)感染细胞模型，证实连花清瘟明显抑制<em>SARS</em></li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2021/04-13/9453814.shtml&nbsp;&nbsp;
+											2021-04-13 16:39:28
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/04-09/9450930.shtml" target="_blank">平台经济改变的不只你我生活</a>
+										</li>
+										<li class="news_content">将会变得有多难。”周勤认为，正是在2003年<em>SARS</em>疫情期间出现的需求，激发了平台发展的内生动力，也催生了一批新兴的应用场景。　　同时，飞速发展的平台反过来也对信息技...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/04-09/9450930.shtml&nbsp;&nbsp;
+											2021-04-09 10:06:06
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/04-08/9449989.shtml" target="_blank">科学发展观：敲响振聋发聩的警钟</a>
+										</li>
+										<li class="news_content">发展观写入党章，同马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想共同确立为党的行动指南。　　钟南山院士课题组曾在《我们是否吸取<em>SARS</em>的教训》一文中总结说：“把社会发展的目的落实到人</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/04-08/9449989.shtml&nbsp;&nbsp;
+											2021-04-08 09:22:05
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/04-08/9449921.shtml" target="_blank">重回武汉：那些关停的医院、推倒的隔离与搁置的摆渡车</a>
+										</li>
+										<li class="news_content">北京市多家三甲医院呼吸、重症、感染等专业的医护，其中不乏<em>SARS</em>疫情的亲历者，抵汉后一日未歇，实地考察、出具分区改造方案，1月29日启用了首个隔离病区，何平与北京的医生一起进入病...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/04-08/9449921.shtml&nbsp;&nbsp;
+											2021-04-08 07:47:06
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/04-08/9449910.shtml" target="_blank">钟南山打了两场逆行之战</a>
+										</li>
+										<li class="news_content">3月，世界卫生组织将肆虐多月的非典命名为“严重急性呼吸综合征”（<em>SARS</em>）。在以钟南山为代表的专家不懈探究下，世界卫生组织确认，引起<em>SARS</em>的病原体是冠状病毒的一个变种...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/04-08/9449910.shtml&nbsp;&nbsp;
+											2021-04-08 06:38:25
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/04-08/9449864.shtml" target="_blank">“重新激活的武汉会比以前更好”</a>
+										</li>
+										<li class="news_content">020年1月27日，首支援军北京援鄂医疗队抵达，驱散了何平的一些焦虑。这支队伍集结了北京市多家三甲医院呼吸、重症、感染等专业的医护，其中不乏<em>SARS</em>疫情的亲历者。抵汉后一日未歇，实地考察、出具分</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/04-08/9449864.shtml&nbsp;&nbsp;
+											2021-04-08 04:53:46
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2021/03-23/9438532.shtml" target="_blank">携多款明星产品亮相AWE 夏普诠释非凡智能新体验</a>
+										</li>
+										<li class="news_content">化技术，可通过等离子放电产生并释放出与自然界相同的正、负离子，可以主动抑制空气中的细菌、病毒、甲醛、PM2.5等有害物质，尤其对于冠状病毒、<em>SARS</em>病毒等多种流感病毒以及大肠杆菌等细菌具</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2021/03-23/9438532.shtml&nbsp;&nbsp;
+											2021-03-23 15:48:53
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/03-17/9433981.shtml" target="_blank">美国疫苗接种破纪录 法意随时准备恢复阿斯利康疫苗</a>
+										</li>
+										<li class="news_content">的研究人员设计了一项大规模研究，以检测在其他健康的美国成年人中<em>SARS</em>-CoV-2抗体的流行情况。<em>SARS</em>-CoV-2是导致新冠的病毒。
+
+　　结果发现，6.6%的参...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/03-17/9433981.shtml&nbsp;&nbsp;
+											2021-03-17 07:54:19
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/jk/2021/03-16/9433825.shtml" target="_blank">《自然》刊发港大等研究：麻风药物能有效对抗新冠病毒感染</a>
+										</li>
+										<li class="news_content">“Clofazimine broadly inhibits coronaviruses including <em>SARS</em>-CoV-2”。研究发现，目前用于治疗麻风病的药物氨苯吩嗪(clofamizine)在人类细胞和仓鼠模型中可有效对...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/jk/2021/03-16/9433825.shtml&nbsp;&nbsp;
+											2021-03-16 21:08:32
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/03-15/9432978.shtml" target="_blank">国际最新研究：英国发现新冠病毒变异株或增死亡风险</a>
+										</li>
+										<li class="news_content">风险
+
+　　中新网北京3月15日电 (记者 孙自法)国际著名学术期刊《自然》15日在线发表一篇流行病学研究论文称，最早在英国发现的新冠病毒(<em>SARS</em>-CoV-2)变异株B</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/03-15/9432978.shtml&nbsp;&nbsp;
+											2021-03-15 21:41:23
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-15/9432999.shtml" target="_blank">焦点访谈丨用实际行动诠释新时代的雷锋精神</a>
+										</li>
+										<li class="news_content">连夜驰援武汉，这其中就有来自瑞金医院的医务人员。　　上海市医疗队队员、上海交通大学医学院附属瑞金医院ICU主任医师 陈德昌：因为我们过去有<em>SARS</em>(非典)救治的经验，这一次其实是一个新型的冠状病毒，所以在防控方面还是有一定的经验。 　　瑞金</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-15/9432999.shtml&nbsp;&nbsp;
+											2021-03-15 21:26:17
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-15/9432660.shtml" target="_blank">希望美中加强合作抗击疫情</a>
+										</li>
+										<li class="news_content">对重症急性呼吸综合征(<em>SARS</em>)和中东呼吸综合征(MERS)疫情等方面，人们进一步体会到了全球合作的重要性。　　3月2日，中国工程院院士钟南山与...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-15/9432660.shtml&nbsp;&nbsp;
+											2021-03-15 15:44:40
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2021/03-10/9429275.shtml" target="_blank">连花清瘟成为全球抗疫中医方案的主导药物</a>
+										</li>
+										<li class="news_content">海外游子手中，温润了一颗颗在外漂泊的心。
+
+　　连花清瘟开启世界征途
+
+　　为抗疫——治疗甲型流感、<em>SARS</em>而生的连花清瘟，因其对新冠肺炎疫情的抑制和治疗作用逐渐获得了海内外一致首肯，为中医药在国际领域树立了新的印象和认知...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2021/03-10/9429275.shtml&nbsp;&nbsp;
+											2021-03-10 17:04:16
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/hr/2021/03-10/9429182.shtml" target="_blank">全球战疫：加拿大华人护士的战疫故事：毕竟有一份信念</a>
+										</li>
+										<li class="news_content">
+
+图为廖宛军在疫情暴发后的工作照。 中新社发 受访者供图
+
+　　疫情出现后，医院ICU开始收治新冠危重症患者。廖宛军说，当时除了一些曾经历<em>SARS</em>的老同事心里比较有底之外，自己和大部分同事面对陌生病毒，心理负担确实很重</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/hr/2021/03-10/9429182.shtml&nbsp;&nbsp;
+											2021-03-10 16:02:34
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-10/9428971.shtml" target="_blank">《自然》：南非新冠病毒变异株有8个突变传染性更强</a>
+										</li>
+										<li class="news_content">网北京3月10日电 (记者 孙自法)国际著名学术期刊《自然》最新在线发表一篇流行病学研究论文称，2020年底在南非部分地区迅速成为新冠病毒(<em>SARS</em>-CoV</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-10/9428971.shtml&nbsp;&nbsp;
+											2021-03-10 11:34:36
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-09/9427868.shtml" target="_blank">全国政协委员方来英：推进新冠疫苗接种需科普与信息公开</a>
+										</li>
+										<li class="news_content">了不起的成就，在此之前，我们也成功应对了<em>SARS</em>、甲流等疫情。　　新京报：你觉得哪些方面是需要改进的？　　方来英：进入互联网时代，如何将更多革命性的成果在管理体制...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-09/9427868.shtml&nbsp;&nbsp;
+											2021-03-09 03:53:45
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2021/03-08/9427301.shtml" target="_blank">国际社会盛赞连花清瘟在全球抗疫中发挥重大作用</a>
+										</li>
+										<li class="news_content">果证实可以有效地结合在ACE2和S蛋白复合物的接触表面上，这些ACE2结合成分可能通过有效影响ACE2和S蛋白之间的结合而抑制新冠病毒(<em>SARS</em>-CoV-2)。这项研究成果是连花清瘟胶囊人体体内成分研究信息的首次阐述，为其抗新冠肺炎的药理活</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2021/03-08/9427301.shtml&nbsp;&nbsp;
+											2021-03-08 14:01:05
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-08/9427251.shtml" target="_blank">这是贾樟柯跟进了十年的议题 每一个职场中的你都该重视</a>
+										</li>
+										<li class="news_content">交集。
+
+　　农历鼠年的最后一天，他转发了自己的一篇旧文《这一年总算就要过去》。文章写于2003年年末，<em>SARS</em>疫情暴发的那一年：“这是空虚的一年，我让自己停止了工作……整整一年没有拍一寸画格。”
+
+　　17年后的2020年，...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-08/9427251.shtml&nbsp;&nbsp;
+											2021-03-08 13:08:50
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-06/9425839.shtml" target="_blank">专访中国疾控中心主任高福：成立国家疫苗研究中心，“把疫苗研究下去”</a>
+										</li>
+										<li class="news_content">打疫苗、什么时候打、如何打，从来都是一个风险和收益之间的平衡问题。”
+
+　　高福回忆称，“非典”疫苗研制完成后并未在全社会推广接种，因为彼时<em>SARS</em>疫情已经结束，MERS(中东呼吸综合征)疫苗更是到了</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-06/9425839.shtml&nbsp;&nbsp;
+											2021-03-06 11:33:26
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-06/9425825.shtml" target="_blank">全国政协委员袁志明：加强新发传染病防控技术和药物储备研究</a>
+										</li>
+										<li class="news_content">、波及广、影响大等特征。自<em>SARS</em>发生以来，世界陆续暴发以跨种传播为特点的疫情，如高致病性流感、中东呼吸道窘迫综合征(MERS)、西尼罗热、埃博拉出...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-06/9425825.shtml&nbsp;&nbsp;
+											2021-03-06 10:37:26
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/03-03/9423205.shtml" target="_blank">中美专家：新冠疫情防控与治疗需要携手合作</a>
+										</li>
+										<li class="news_content">普金表示，脊髓灰质炎、天花、艾滋病等疾病的治疗都是通过有效的国际合作得以实现的。在应对<em>SARS</em>(重症急性呼吸综合征)、MERS(中东呼吸综合征)疫情等方面，我们进一步体会到了全球合作的重要性。
+
+　　“新冠病...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/03-03/9423205.shtml&nbsp;&nbsp;
+											2021-03-03 12:47:18
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/jk/2021/03-03/9422936.shtml" target="_blank">研究揭示新冠病毒与人体结合能力强于<em>SARS</em></a>
+										</li>
+										<li class="news_content">　　研究揭示新冠病毒 与人体结合能力强于<em>SARS</em>
+
+　　医线传真
+
+　　科技日报讯 (记者陈曦 通讯员赵晖)记者2月24日从天津大学获悉，该校生物信息中心主任高峰...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/jk/2021/03-03/9422936.shtml&nbsp;&nbsp;
+											2021-03-03 04:51:42
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/03-02/9422103.shtml" target="_blank">动物模型研究：另一个与新冠病毒较量的战场</a>
+										</li>
+										<li class="news_content">　　那场会议汇集了美国、荷兰、法国、英国等国家著名的传染病研究专家。有人提出，要用猴子或金黄地鼠建立动物模型；还有人讲到，他们要从液氮中复苏<em>SARS</em>期间做出来的小鼠模型。
+
+　　会上，大多数国外专家的分享还停留在实验</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/03-02/9422103.shtml&nbsp;&nbsp;
+											2021-03-02 06:25:13
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/cj/2021/03-02/9422109.shtml" target="_blank">科兴中维与新冠病毒赛跑</a>
+										</li>
+										<li class="news_content">身体会。2003年<em>SARS</em>疫情暴发时，当时即将迎来两周岁生日的科兴中维主动请缨，迅速立项，启动<em>SARS</em>病毒灭活疫苗研究。
+...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/cj/2021/03-02/9422109.shtml&nbsp;&nbsp;
+											2021-03-02 06:19:59
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/ga/2021/02-27/9420459.shtml" target="_blank">专访港区全国政协委员高永文 “把脉”疫后大湾区医疗发展</a>
+										</li>
+										<li class="news_content">投入抗疫，早在2003年<em>SARS</em>疫情期间已有实践。高永文记得，其时广东省中医院曾派2名中医专家来港支援，“他们跟香港西医一起，到公立医院ICU去诊...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/ga/2021/02-27/9420459.shtml&nbsp;&nbsp;
+											2021-02-27 12:47:37
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-22/9416146.shtml" target="_blank">《科学》呼吁：国际科技界应努力研发通用冠状病毒疫苗</a>
+										</li>
+										<li class="news_content">冠病毒是其中之一，另外两种分别是重症急性呼吸综合征病毒（<em>SARS</em>）和中东呼吸综合征病毒（MERS）。　　科夫和伯克利称，新冠病毒有可能发生变异，降低目前疫苗的有效性，甚至使其失效...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-22/9416146.shtml&nbsp;&nbsp;
+											2021-02-22 09:11:39
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-20/9415024.shtml" target="_blank">欧盟公布快速抗原检测试剂通用清单 含多款中国产品</a>
+										</li>
+										<li class="news_content">品，主要有乐普(北京)医疗器械股份有限公司(Beijing Lepu Medical Technology)的<em>SARS</em>-CoV-2抗原快速检测试剂盒、浙江东方基因生物制品股份有限公司(Zhejiang Orient Gene Bio...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-20/9415024.shtml&nbsp;&nbsp;
+											2021-02-20 10:50:01
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/02-19/9414506.shtml" target="_blank">中国科研人员在《Science》发表新冠药物研发最新成果</a>
+										</li>
+										<li class="news_content">贺劭清)记者19日从四川大学获悉，四川大学华西医院生物治疗国家重点实验室联合中科院昆明动物研究所，于当日在《Science》上在线发表题为“<em>SARS</em>-CoV-2 Mpro inhibitors with</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/02-19/9414506.shtml&nbsp;&nbsp;
+											2021-02-19 15:19:43
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-18/9413517.shtml" target="_blank">美国日增新冠感染数为何显著下降？专家指出这些原因</a>
+										</li>
+										<li class="news_content">有所消退。自2021年1月1日以来，英国单日感染病例下降了70%，加拿大下降了50%，葡萄牙下降了30%。
+
+　　这也意味着，<em>SARS</em>-CoV-2病毒属于季节性病毒的可能性有所增加。2020年，一项针对<em>SARS</em>-CoV-2等冠状病...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-18/9413517.shtml&nbsp;&nbsp;
+											2021-02-18 13:53:02
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-16/9412342.shtml" target="_blank">美国研究显示：美国目前已发现7种新冠病毒变异株</a>
+										</li>
+										<li class="news_content">　　当地时间2月14日，美国多个机构及大学发布一篇名为《2020年末多个影响677号氨基酸的蛋白变体<em>SARS</em>-CoV-2变异株出现》(Emergence in late 2020 of multiple lineages ...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-16/9412342.shtml&nbsp;&nbsp;
+											2021-02-16 00:51:47
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-11/9410176.shtml" target="_blank">国际锐评：这场武汉发布会释放的信息让“阴谋论者”失望了</a>
+										</li>
+										<li class="news_content">梁万年所说，此次联合研究属于<em>SARS</em>、新冠病毒全球溯源研究的中国部分，基于全球和中国过去科学家的研究基础所形成的研究报告，将为其他国家、地区的病毒溯源...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-11/9410176.shtml&nbsp;&nbsp;
+											2021-02-11 10:54:21
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-10/9409896.shtml" target="_blank">国际最新研究：手机数据分析可模拟并预报流感传播</a>
+										</li>
+										<li class="news_content">并不包含在内。虽然存在这些限制，但论文作者证明了利用手机数据预报流行病传播的潜力，后续仍需开展进一步研究，以确定该方法是否也适用于新冠病毒(<em>SARS</em>-CoV-2)这类病毒性传染病。(完)</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-10/9409896.shtml&nbsp;&nbsp;
+											2021-02-10 20:17:22
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/02-10/9409237.shtml" target="_blank">探索生命奥秘的里程碑——写在人类基因组草图发表20周年之际</a>
+										</li>
+										<li class="news_content">了设备，而且培养了技术。”　　通过参与“人类基因组计划”，中国科学家得以在短时间内学习并追赶发达国家的先进生物技术，又先后完成了水稻基因组、<em>SARS</em>冠状病毒的基因组研究，以及对熊猫、家猪、家鸡、家蚕等动物基因组的测序工作，使我国的基因组研究得以跻身世界前列。　　...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/02-10/9409237.shtml&nbsp;&nbsp;
+											2021-02-10 04:21:05
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-09/9409134.shtml" target="_blank">东南亚蝙蝠和穿山甲体内发现新冠病毒相关冠状病毒证据</a>
+										</li>
+										<li class="news_content">了一种与新冠病毒(<em>SARS</em>-CoV-2)相关的冠状病毒，并从该地区的蝙蝠以及泰国南部一个野生动物检查站抽样的一只穿山甲体内发现了能中和新冠病...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-09/9409134.shtml&nbsp;&nbsp;
+											2021-02-09 21:44:23
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/02-08/9408113.shtml" target="_blank">我国科学家研究联盟揭示新冠肺炎免疫学特征</a>
+										</li>
+										<li class="news_content">可能。这可能是新冠病毒区别于<em>SARS</em>病毒的重要特点，也可能是新冠病毒具有较强传染力的原因。　　这一发现与新冠病毒核酸阳性细胞具有较强的干扰素反应一致，...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/02-08/9408113.shtml&nbsp;&nbsp;
+											2021-02-08 20:01:30
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/jk/2021/02-07/9407040.shtml" target="_blank">国际研究发现免疫抑制患者新冠病毒演化单个病例</a>
+										</li>
+										<li class="news_content">(<em>SARS</em>-CoV-2)的不同变异株。接受血浆治疗后，占主导的新冠病毒变异株含有英国发现的变异株B.1.1.7上的一个缺失突...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/jk/2021/02-07/9407040.shtml&nbsp;&nbsp;
+											2021-02-07 15:54:03
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/02-06/9406444.shtml" target="_blank">看过武汉实验室后，世卫专家对CNN说了这句话……</a>
+										</li>
+										<li class="news_content">that got close to finding what the next <em>SARS</em>-related coronavirus would be. But it didn't find it as f...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/02-06/9406444.shtml&nbsp;&nbsp;
+											2021-02-06 18:54:03
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/02-03/9403913.shtml" target="_blank">《自然-医学》：2020年曾有16种新冠病毒新变种在南非传播</a>
+										</li>
+										<li class="news_content">毒(<em>SARS</em>-CoV-2)新变种在南非传播。
+
+
+
+资料图：图为南非一药店内，工作人员正在整理消毒用品。 中新社记者 王曦 摄...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/02-03/9403913.shtml&nbsp;&nbsp;
+											2021-02-03 20:36:19
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/jk/2021/02-03/9403477.shtml" target="_blank">连花清瘟如何抑制新冠？最新研究发现大黄酸等成分有显著作用</a>
+										</li>
+										<li class="news_content">anti-viral and anti-inflammatory activity against novel coronavirus (<em>SARS</em>-CoV-2)》)，在《药理学研究》(Pharmacological Research)在线刊出，这</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/jk/2021/02-03/9403477.shtml&nbsp;&nbsp;
+											2021-02-03 14:35:02
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/02-01/9401210.shtml" target="_blank">春节疫情防控怎么做？钟南山最新研判来了</a>
+										</li>
+										<li class="news_content">复，目前主要采用心肺功能机观察康复病人的心肺功能变化。其次是心理治疗，但现在很多新冠肺炎病人的康复情况不如<em>SARS</em>，对于康复患者的追踪要特别重视心理上的康复。
+
+　　核酸复阳的问题也被提及。钟南山说：“我个人倾向，核酸复阳并不危...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/02-01/9401210.shtml&nbsp;&nbsp;
+											2021-02-01 06:55:39
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-31/9401101.shtml" target="_blank">钟南山谈疫情防控：春节来临疫情防控农村是重点</a>
+										</li>
+										<li class="news_content">，中风险地区群众原则上就地过年，低风险地区倡导群众就地过年，非必要不出行。新冠肺炎有一个特点跟<em>SARS</em>不一样，它有时候感染了没症状，但有明显的传染性。春节在农村提倡少串门，特别是少聚会。另外，如果有不舒服一定要去看医...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-31/9401101.shtml&nbsp;&nbsp;
+											2021-01-31 20:46:42
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-31/9400877.shtml" target="_blank">钟南山：农村疫情防控是重点 预计全球疫情3月起才会下降</a>
+										</li>
+										<li class="news_content">，中风险地区原则上就地过年，低风险地区倡导就地过年。
+
+
+
+中国工程院院士钟南山。陈骥旻 摄
+
+　　“新冠肺炎有一个特点与<em>SARS</em>不一样，它有时候感染了没症状，但是有明显的传染性。”钟南山称，提倡春节期间农村地区少串门和少聚会。此外，需要提高</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-31/9400877.shtml&nbsp;&nbsp;
+											2021-01-31 15:30:00
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-31/9400864.shtml" target="_blank">注射疫苗后还用戴口罩吗？疫苗有效性安全性如何？钟南山回应</a>
+										</li>
+										<li class="news_content">叉感染，应采用移动车到村里应检尽检，不要让老百姓兴师动众，这是一个非常重要的科技体现。
+
+　　新冠肺炎有一个特点跟<em>SARS</em>不一样，就是即便感染了病毒也可能没有症状，但没症状也有明显的传染性。因此春节期间，在农村的老百姓一定要：1、少串门...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-31/9400864.shtml&nbsp;&nbsp;
+											2021-01-31 14:46:49
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/sh/shipin/cns-d/2021/01-31/news879294.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/34569572603745FCA3A82BFC199D4E04.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/shipin/cns-d/2021/01-31/news879294.shtml" target="_blank">钟南山：农村防疫是重点</a>
+										</li>
+										<li class="news_content">　　钟南山院士1月31日表示，新冠肺炎有一个特点跟<em>SARS</em>不一样，它有时候感染了没症状，但是有明显的传染性。春节在农村提倡少串门，特别是少聚会。另外，有不舒服一定要去看医生...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/shipin/cns-d/2021/01-31/news879294.shtml&nbsp;&nbsp;
+											2021-01-31 12:44:58
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-31/9400843.shtml" target="_blank">钟南山谈当前疫情防控形势 农村防疫是重点</a>
+										</li>
+										<li class="news_content">点跟<em>SARS</em>不一样，它有时候感染了没症状，但是有明显的传染性。春节在农村提倡少串门，特别是少聚会。另外，有不舒服一定要去看医生...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-31/9400843.shtml&nbsp;&nbsp;
+											2021-01-31 12:36:29
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-31/9400838.shtml" target="_blank">钟南山：无症状感染也有明显的传染性 农村地区春节期间要注意这些</a>
+										</li>
+										<li class="news_content">。
+
+　　新冠肺炎有一个特点跟<em>SARS</em>不一样，就是即便感染了病毒也可能没有症状，但没症状也有明显的传染性。因此春节期间，在农村的老百姓一定要：1、少串门...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-31/9400838.shtml&nbsp;&nbsp;
+											2021-01-31 12:26:19
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/tw/2021/01-29/9399529.shtml" target="_blank">陈水扁亲信潜逃美国12年 自家车库内持枪自尽</a>
+										</li>
+										<li class="news_content">，黄芳彦任新光医院医疗副院长，并在2000年陈水扁担任台湾地区领导人时任其医疗团召集人。2002年<em>SARS</em>期间，黄芳彦接任台军松山医院总指挥。
+
+　　2008年陈水扁卸任，黄芳彦卷入SOGO礼券案、SOGO经营权案、陈水...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/tw/2021/01-29/9399529.shtml&nbsp;&nbsp;
+											2021-01-29 11:05:24
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-29/9399451.shtml" target="_blank">疫情下的英国：一边是恐惧，一边是淡然</a>
+										</li>
+										<li class="news_content">丁堡大学全球公共卫生主席的著名科学家德维·斯里达尔(Devi Sridhar)教授就指出：“英国政府一直把新冠病毒当作流感病毒处理而不是类似<em>SARS</em>病毒来处理，这是一个根本性错误，这一失误不仅让个</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-29/9399451.shtml&nbsp;&nbsp;
+											2021-01-29 10:11:06
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-27/9397418.shtml" target="_blank">ECMO是患者救命稻草？医生：仅是体外生命支持技术</a>
+										</li>
+										<li class="news_content"><em>SARS</em>疫情中的表现，以及因此而降低的死亡率。
+
+　　在他看来，这项技术既能救人，又存在“高创伤、高消耗、高并发症”的问题...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-27/9397418.shtml&nbsp;&nbsp;
+											2021-01-27 07:34:31
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-26/9397254.shtml" target="_blank">划重点！疾控专家答疑第二剂新冠疫苗接种注意事项</a>
+										</li>
+										<li class="news_content">使现有的新冠病毒疫苗失效。世界卫生组织全球新冠病毒实验室网络包括一个专门的<em>SARS</em>-CoV-2病毒变异演化工作组，正在适时快速检测病毒新的突变并评估其可能的影响，这也将为后续疫苗的研发及应用提供预...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-26/9397254.shtml&nbsp;&nbsp;
+											2021-01-26 21:16:37
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-26/9397224.shtml" target="_blank">何时能彻底摘下口罩？武大病毒所教授杨占秋这样判断</a>
+										</li>
+										<li class="news_content">病——“非典(<em>SARS</em>)”在全球爆发流行，为了控制这种疾病的再次暴发流行，杨占秋率领实验室全体师生研制<em>SARS</em>冠状病毒...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-26/9397224.shtml&nbsp;&nbsp;
+											2021-01-26 20:38:43
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-25/9396172.shtml" target="_blank">全球战疫：加拿大新冠疫情一年有得有失</a>
+										</li>
+										<li class="news_content">都错过了更有效遏制病毒的关键窗口。这暴露出一些不容回避的问题。
+
+　　其一，在初期过度自信，导致反应迟缓。凭着应对<em>SARS</em>的经验，加方自认应对能力足够强。当发现首个病例，以及世卫组织先后宣布新冠疫情为紧急公共卫生事件和大流行后，加官方仍...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-25/9396172.shtml&nbsp;&nbsp;
+											2021-01-25 18:55:26
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2021/01-25/9395959.shtml" target="_blank">连花清瘟胶囊抗新冠肺炎药理活性成分取得新进展</a>
+										</li>
+										<li class="news_content">接结果证实可以有效地结合在ACE2和S蛋白复合物的接触表面上，这些ACE2结合成分可能通过有效影响ACE2和S蛋白之间的结合而抑制新冠病毒(<em>SARS</em>-CoV-2)，为连花清瘟胶囊预防和治疗新冠</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2021/01-25/9395959.shtml&nbsp;&nbsp;
+											2021-01-25 15:27:57
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-24/9395295.shtml" target="_blank">广西出口口罩超2.5亿只 防疫物资供远销欧洲南美及东盟</a>
+										</li>
+										<li class="news_content">西道纪医疗设备有限公司CT智造与应用项目、南宁呼研所健康科技有限公司呼吸传染病感控设备研发及生产项目、桂林优利特医疗电子有限公司新型冠状病毒<em>SARS</em>-CoV-2核酸检测试剂盒</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-24/9395295.shtml&nbsp;&nbsp;
+											2021-01-24 17:53:52
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/sh/2021/01-23/9394608.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/129757150_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-23/9394608.shtml" target="_blank">“爱在一呼一吸间”—“健康中国-星巴克助力基层防控新冠肺炎计划”在京启动</a>
+										</li>
+										<li class="news_content">益项目将在三年时间内，惠及3000多个基层医疗机构超过9万的医务工作者。
+
+　　“从中世纪的黑死病，到上世纪的1918年大流感；从本世纪初的<em>SARS</em>，到当前的新冠肺炎疫情，呼吸道传染病可以说是最难防、最难控的。”在王辰看来，突如其来的</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-23/9394608.shtml&nbsp;&nbsp;
+											2021-01-23 15:38:07
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-21/9393178.shtml" target="_blank">热搜爆了！这个美国病毒基地藏不住了</a>
+										</li>
+										<li class="news_content">，引发了国际社会的持续关注。
+
+　　据“事件201”官网介绍，当时演习的场景是：模拟了一种新型人畜共患病冠状病毒(CAPS)的暴发。该病毒比<em>SARS</em>更容易传播，可能由症状较轻的个体传播。这种病毒起初由蝙蝠</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-21/9393178.shtml&nbsp;&nbsp;
+											2021-01-21 18:43:43
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-19/9391006.shtml" target="_blank">国际最新研究：感染新冠病毒后的免疫力或至少维持6个月</a>
+										</li>
+										<li class="news_content">　　(抗击新冠肺炎)国际最新研究：感染新冠病毒后的免疫力或至少维持6个月
+
+　　中新网北京1月19日电 (记者 孙自法)感染新冠病毒(<em>SARS</em>-CoV-2)后，人体免疫系统如何“记住”新冠病毒、能保持多长时间等议题备受关注。国际著名学术期</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-19/9391006.shtml&nbsp;&nbsp;
+											2021-01-19 13:55:31
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-14/9386485.shtml" target="_blank">菲律宾禁止来自33国家和地区船舶在菲港口更换船员</a>
+										</li>
+										<li class="news_content">行时间。
+
+　　13日，菲律宾卫生部(DOH)和菲律宾基因组中心(PGC)联合发布消息，一名从阿拉伯联合酋长国入境的菲律宾男性新冠病毒变种(<em>SARS</em>-CoV-2variant)检测结果为阳性，这是菲律宾发现的首例新冠病毒变种入境患者。(完)</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-14/9386485.shtml&nbsp;&nbsp;
+											2021-01-14 03:08:20
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-13/9386457.shtml" target="_blank">菲发现首例新冠病毒变种入境患者</a>
+										</li>
+										<li class="news_content">向东)当地时间1月13日，菲律宾卫生部(DOH)和菲律宾基因组中心(PGC)联合发布消息，一名从阿拉伯联合酋长国入境的菲律宾人新冠病毒变种(<em>SARS</em>-CoV-2variant)检测结果为阳性</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-13/9386457.shtml&nbsp;&nbsp;
+											2021-01-13 22:47:20
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/gn/2021/01-13/9386033.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/129319790_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-13/9386033.shtml" target="_blank">科研人员利用器官芯片技术模拟新冠病毒感染诱发肺损伤和免疫反应</a>
+										</li>
+										<li class="news_content">等，为新冠病毒致病机制研究和快速药物评价等提供新策略和新技术。
+
+　　新型冠状病毒(<em>SARS</em>-CoV-2)感染已导致全球大流行。肺脏是<em>SARS</em>-CoV-2感染的主要靶器官。目前新冠肺炎的临...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-13/9386033.shtml&nbsp;&nbsp;
+											2021-01-13 15:57:03
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-11/9384000.shtml" target="_blank">希腊确认新冠病毒完整基因序列 实时监测病毒变异情况</a>
+										</li>
+										<li class="news_content">现的变异毒株已传播至希腊，系4名来自英国的旅客传入。
+
+　　目前，雅典科学院生物研究所正在对新冠病毒进行进一步研究。所有这些行动都是在“抗击<em>SARS</em>-CoV-2病毒旗舰行动”的框架下进行的。
+
+　　据介绍，这一行动具体是</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-11/9384000.shtml&nbsp;&nbsp;
+											2021-01-11 13:59:03
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-10/9383171.shtml" target="_blank">1733例金银潭新冠患者随访：超七成半年后至少有1种症状</a>
+										</li>
+										<li class="news_content">查。此外，94例参与另外一个临床试验(LOTUS China)且完成急性期<em>SARS</em>-CoV-2抗体检测的患者在随访时再次进行抗体检测。
+
+　　研究发现，在随访时76%(1265/1655)的患者报...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-10/9383171.shtml&nbsp;&nbsp;
+											2021-01-10 09:11:19
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-10/9383131.shtml" target="_blank">如何应对下一场疫情？高福：还有COVID-29</a>
+										</li>
+										<li class="news_content">9这些数字并不是指代精确的年份，而是指下一场疫情只是“时间问题”。　　无论是100年前的骇人的“西班牙大流感”，还是记忆仍未远去的2003年<em>SARS</em>疫情，过往的事件证明，人</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-10/9383131.shtml&nbsp;&nbsp;
+											2021-01-10 07:26:54
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/sh/shipin/cns/2021/01-09/news877345.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/5ff98de35a11bf21153d6918_big.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/shipin/cns/2021/01-09/news877345.shtml" target="_blank">北京20位核酸检测医疗队员驰援河北</a>
+										</li>
+										<li class="news_content">、初三级医师、检验师、技师等多层次、多专业医务人员。
+
+　　【解说】领队张国军是北京天坛医院检验科主任，今年已有51岁，作为经历了<em>SARS</em>和前两次疫情考验的检验“老兵”，他具有丰富的经验。他告诉记者，抵达南宫后，队伍会在第一时间投入到工作中</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/shipin/cns/2021/01-09/news877345.shtml&nbsp;&nbsp;
+											2021-01-09 20:09:59
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/sh/2021/01-09/9382874.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/129151430_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-09/9382874.shtml" target="_blank">北京核酸检测医疗队驰援河北邢台南宫</a>
+										</li>
+										<li class="news_content">、有经验丰富的检验人员。
+
+　　医疗队领队是北京天坛医院检验科主任张国军，作为经历了<em>SARS</em>和前两次疫情考验的检验“老兵”，他参与规划建设北京天坛医院实验诊断中心和PCR实验室，具有丰富的管理和检验经验。
+...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-09/9382874.shtml&nbsp;&nbsp;
+											2021-01-09 17:21:43
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-07/9381026.shtml" target="_blank">同舟共济、共克时艰，夺取全球抗疫最终胜利</a>
+										</li>
+										<li class="news_content">，人类就是它存活并侵害的猎物。为了依靠细胞进行增殖，不怕与人同归于尽，这就是病毒的邪恶本性。<em>SARS</em>病毒如此，H5N1如此，埃博拉病毒如此，新冠病毒亦是如此。我们能做的，除了防控还是防控，舍此没有别的出路。而且还要...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-07/9381026.shtml&nbsp;&nbsp;
+											2021-01-07 15:50:52
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2021/01-06/9379761.shtml" target="_blank">南非发现的变异新冠病毒是否更危险？BBC这样说</a>
+										</li>
+										<li class="news_content">何应对？
+
+　　世界卫生组织在2020年12月31日公布，自新冠疫情开始以来，已经收到了几份可能由新冠<em>SARS</em>-CoV-2变种引起的异常公共卫生事件的报告。
+
+　　世卫组织表示，将定期评估变种是否会导致传染率、临床表现和病情...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2021/01-06/9379761.shtml&nbsp;&nbsp;
+											2021-01-06 10:18:36
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-06/9379572.shtml" target="_blank">感染初期体温升高或有助降低新冠肺炎患者死亡率</a>
+										</li>
+										<li class="news_content">的<em>SARS</em>病毒，在高温下与ACE2的结合力并不会变弱，其在高温下的感染性不会减弱。原因在于这两种冠状病毒S蛋白的某一结构域的...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-06/9379572.shtml&nbsp;&nbsp;
+											2021-01-06 02:21:38
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-05/9379195.shtml" target="_blank">关于北京市新冠疫苗接种，这22个问题有了权威解答</a>
+										</li>
+										<li class="news_content">况看，尚无证据证明病毒变异会使现有的新冠病毒疫苗失效。世界卫生组织全球新冠病毒实验室网络包括一个专门的<em>SARS</em>-CoV-2病毒变异演化工作组，正在适时快速检测病毒新的突变并评估其可能的影响，这也将为后续疫苗的研发及应用提供预...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-05/9379195.shtml&nbsp;&nbsp;
+											2021-01-05 16:15:57
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-04/9377832.shtml" target="_blank">北京两天接种新冠疫苗7万余剂</a>
+										</li>
+										<li class="news_content">异会使现有的新冠病毒疫苗失效。世卫组织全球新冠病毒实验室网络包括<em>SARS</em>-CoV-2病毒变异演化工作组，正在适时快速检测病毒新的突变并评估其可能的影响，这也将为后续疫苗的研发、应用提供预...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-04/9377832.shtml&nbsp;&nbsp;
+											2021-01-04 00:24:02
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2021/01-03/9377769.shtml" target="_blank">综合消息：大连疫情出现超级传播现象 广东再现与变异病毒基因相似病例</a>
+										</li>
+										<li class="news_content">组织全球新冠病毒实验室网络包括一个专门的<em>SARS</em>-CoV-2病毒变异演化工作组，正在适时快速检测病毒新的突变并评估其可能的影响，这也将为后续疫苗的研发及应用提供预...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2021/01-03/9377769.shtml&nbsp;&nbsp;
+											2021-01-03 20:42:20
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-03/9377669.shtml" target="_blank">病毒变异会对疫苗效果产生影响吗？中疾控回应</a>
+										</li>
+										<li class="news_content">过全球新冠病毒实验室网络，包括一个专门的<em>SARS</em>-CoV-2病毒变异演化工作组，持续关注病毒变异情况以及评估其可能的影响，这也将为后续疫苗的研发及应用提供预警和科...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-03/9377669.shtml&nbsp;&nbsp;
+											2021-01-03 17:42:50
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2021/01-02/9377018.shtml" target="_blank">防治新冠没有速效药 更需领导力、管理能力和社会稳定</a>
+										</li>
+										<li class="news_content">新的地震、海啸和随之而来的疾病都提醒我们，大自然是一股危险的力量。如果说亚洲国家对新冠疫情的响应更迅速和有效的话，那么它背后的原因就是吸取了<em>SARS</em>、和禽流感等瘟疫的教</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2021/01-02/9377018.shtml&nbsp;&nbsp;
+											2021-01-02 10:03:09
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2020/12-31/9376049.shtml" target="_blank">年终观察：2020年最后一天，回首21世纪的这20年</a>
+										</li>
+										<li class="news_content">踏足各大洲， H1N1病毒、“非典”(<em>SARS</em>)病毒、中东呼吸综合征(MERS)病毒、埃博拉以及新冠病毒，都是他的“猎物”。
+
+　　回首2003年冬春之交，“非...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2020/12-31/9376049.shtml&nbsp;&nbsp;
+											2020-12-31 19:31:57
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/hr/2020/12-30/9374640.shtml" target="_blank">新加坡小商贩疫情期间生意碰壁 绝处逢生不言弃</a>
+										</li>
+										<li class="news_content">办各类活动为生的相关行业跌入寒冬。李俊杰的公司在长达八个月的时间里陷入零收入状态。拥有15年行业经验的他告诉记者：“开始以为冠病的影响程度和<em>SARS</em>差不多，没想到半年之后情况更严重，我认为自己所处行业恢复机会不大，于是决定改行</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/hr/2020/12-30/9374640.shtml&nbsp;&nbsp;
+											2020-12-30 11:16:36
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2020/12-29/9373917.shtml" target="_blank">高福院士谈新冠肺炎疫苗研发：我们的竞争对手是病毒</a>
+										</li>
+										<li class="news_content">，1918年的大流感，那时候连病毒都没分离出来；<em>SARS</em>的时候，我们花了半年才知道病毒是什么；艾滋病毒也是花了几年时间才把病毒分离出来；这次新冠肺炎病毒，很快我们就分离了...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2020/12-29/9373917.shtml&nbsp;&nbsp;
+											2020-12-29 14:48:43
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/jk/2020/12-29/9373828.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/128639960_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/jk/2020/12-29/9373828.shtml" target="_blank">上海启动制定儿童发热门诊质控、传染病转诊标准</a>
+										</li>
+										<li class="news_content">卫生突发事件及儿童传染病防治工作中，复旦大学附属儿科医院积累了不少成功经验；作为上海唯一儿童传染病定点医院，该院先后承担<em>SARS</em>、手足口病、人感染H7N9禽流感、新冠肺炎等防控任务。今年1月19日，复旦儿科投入抗击新冠肺炎疫情的“战斗”，成</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/jk/2020/12-29/9373828.shtml&nbsp;&nbsp;
+											2020-12-29 13:42:45
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2020/12-26/9371856.shtml" target="_blank">非洲籍医生杰西：和广州人民共战“疫”</a>
+										</li>
+										<li class="news_content">游等有多种选择，中国发生了翻天覆地的变化，并且没有停止，一直在发展。”　　见证过非典疫情 今年与广州人民共战“疫” 　　2003年，中国经历<em>SARS</em>疫情的时候，杰西在当时的中山医科大学(现中山大学中山医学院)一边学习一边工作。　　杰西表</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2020/12-26/9371856.shtml&nbsp;&nbsp;
+											2020-12-26 18:11:33
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/ga/2020/12-23/9369560.shtml" target="_blank">香港民建联吁关注公屋喉管安装 降低疫情传播风险</a>
+										</li>
+										<li class="news_content">其居所内的喉管安装，如发现有问题应及时维修及更换。他呼吁大家都应该提高警惕，以避免出现2003年香港淘大花园多人集中感染严重急性呼吸综合征(<em>SARS</em>)病毒的情况。
+
+　　陈凯荣表示，如果特区政府能够帮助市民做居所喉管的检查工作，会为市民带来很大方便。(完)</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/ga/2020/12-23/9369560.shtml&nbsp;&nbsp;
+											2020-12-23 18:27:33
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/cul/2020/12-22/9368693.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/128348360_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/cul/2020/12-22/9368693.shtml" target="_blank">广东举办医学专题邮品展 部分珍品首次展出</a>
+										</li>
+										<li class="news_content">副会长、广州本土医学集邮家梁振刚近40年所收藏的各类医学邮品，内容涵盖《人类与病毒》《病毒与癌症》《天花》《流感》《艾滋病》《伊博拉病毒》《<em>SARS</em>》《COVID-19》等多个主题。
+
+　　据</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/cul/2020/12-22/9368693.shtml&nbsp;&nbsp;
+											2020-12-22 19:16:52
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/business/2020/12-22/9368125.shtml" target="_blank">《连花清瘟对新型冠状病毒具有抗病毒抗炎作用》获全球优秀论文奖</a>
+										</li>
+										<li class="news_content">activity against novel coronavirus (<em>SARS</em>-CoV-2)》)的研究论文，被国际期刊《药理学研究》(Pharmacological Research)评选为2...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/business/2020/12-22/9368125.shtml&nbsp;&nbsp;
+											2020-12-22 10:23:55
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2020/12-21/9367134.shtml" target="_blank">猫狗都会感染新冠 需要为宠物注射新冠疫苗吗？</a>
+										</li>
+										<li class="news_content">》：“公司仍然可以自由研发这些疫苗，但没有许可证，这些公司不能出售或分销。”
+
+　　实验室研究表明，从细胞受体看，<em>SARS</em>-CoV-2可以感染从松鼠到绵羊甚至抹香鲸等多种动物。 EcoHealth科学与推广副总裁乔纳森·爱泼斯坦（Jon...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2020/12-21/9367134.shtml&nbsp;&nbsp;
+											2020-12-21 07:34:05
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/hr/2020/12-17/9364348.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/U882P894T5D279972F42DT20201217105136.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/hr/2020/12-17/9364348.shtml" target="_blank">驻巴西使馆发布赴华人员凭双阴性证明登机常见问答</a>
+										</li>
+										<li class="news_content">核酸检测(RT-PCR)和血清IgM抗体检测(Serologia Anti-<em>Sars</em>-Cov-2 IGM)，以免因检测类型错误导致无法及时获发“HS”码或“HDC”码，影响行程并造成经济损失。
+
+　...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/hr/2020/12-17/9364348.shtml&nbsp;&nbsp;
+											2020-12-17 11:51:38
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/hr/2020/12-17/9364286.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/U882P894T5D279941F42DT20201217092418.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/hr/2020/12-17/9364286.shtml" target="_blank">驻瑞士大使馆再次提醒赴华旅客登机注意事项</a>
+										</li>
+										<li class="news_content">行，确需回国人员请尽量选择乘坐所在国直航航班回国，旅途中务必注意人身财产安全。
+
+　　二、确保检测合规。登机前“双检测”指新冠病毒核酸检测(<em>SARS</em>-CoV-2</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/hr/2020/12-17/9364286.shtml&nbsp;&nbsp;
+											2020-12-17 10:53:38
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2020/12-16/9363244.shtml" target="_blank">中科院微生物所施一：探索科研无人区，关注冰川冻土下古病毒</a>
+										</li>
+										<li class="news_content">大家就去做相关的研究。”
+
+　　施一及其团队在这次疫情中主要从新冠病毒聚合酶入手，从而去了解病毒特性。“我们发现，新冠病毒的聚合酶活性是比 <em>SARS</em>病毒低的，这个认识进一步支持了新冠病毒相对</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2020/12-16/9363244.shtml&nbsp;&nbsp;
+											2020-12-16 07:27:21
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/sh/2020/12-12/9360771.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/127868280_zsite.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2020/12-12/9360771.shtml" target="_blank">“冷板凳”上与病毒较量10年 35岁施一话“诗和远方”</a>
+										</li>
+										<li class="news_content">一种。“大年初一那天，我就开始扎根实验室做科研攻关了。对于新冠病毒，我首先从聚合酶入手了解这个病毒的一些特性，很快发现新冠病毒聚合酶的活性比<em>SARS</em>病毒</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2020/12-12/9360771.shtml&nbsp;&nbsp;
+											2020-12-12 20:35:49
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2020/12-11/9359395.shtml" target="_blank">中国科研团队揭示新冠病毒由水貂向人传播机理</a>
+										</li>
+										<li class="news_content">毒发病者极为相似的病理损伤，包括肺部的血栓形成。更重要的是，他们发现新冠病毒在水貂之间可通过呼吸道飞沫高效传播。
+
+　　研究进一步证明，重组<em>SARS</em>-CoV-2 S蛋白疫苗接种水貂可成功预防肺部损伤。该研究</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2020/12-11/9359395.shtml&nbsp;&nbsp;
+											2020-12-11 04:02:32
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2020/12-11/9359366.shtml" target="_blank">北京榜样年度评选开始 全网点赞超1.7亿人次</a>
+										</li>
+										<li class="news_content">，从<em>SARS</em>到新冠肺炎，近年来发生的每一场重大疫情战役，他都奋战在最前线。不论麻疹、流脑、狂犬病，还是霍乱、艾滋病，只要是危及...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2020/12-11/9359366.shtml&nbsp;&nbsp;
+											2020-12-11 00:07:08
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/ga/2020/12-10/9359019.shtml" target="_blank">香港丽晶花园暴疫 第6座所有楼层D室居民将隔离检疫</a>
+										</li>
+										<li class="news_content">花园的设计与2003年暴发严重急性呼吸综合征(<em>SARS</em>)的淘大花园有不同，认为即使有类似当年淘大花园的传播情况，严重程度也会较低。他建议该座居民在使用厕所时最好要佩戴口...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/ga/2020/12-10/9359019.shtml&nbsp;&nbsp;
+											2020-12-10 17:30:21
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+									<a href="http://www.chinanews.com/ga/shipin/cns/2020/12-07/news874529.shtml" target="_blank"><img class="rsimg" src="./中新网搜索_files/3794b09b9c224468bccc90d6681b9a50_big.jpg" style="border: 0px;">
+									</a>
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/ga/shipin/cns/2020/12-07/news874529.shtml" target="_blank">香港练马师：疫情下“有马跑”是一种寄托</a>
+										</li>
+										<li class="news_content">，更是香港人不屈不挠拼搏精神的体现。
+
+　　【同期】香港练马师 罗富全
+
+　　我想<em>SARS</em>(非典)期间，应该是那段时间，出过一匹马叫“精英大师”，连赢了十几场，它在那段时间可以给大家一个鼓励的作用，(鼓励...</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/ga/shipin/cns/2020/12-07/news874529.shtml&nbsp;&nbsp;
+											2020-12-07 10:58:15
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2020/12-05/9355246.shtml" target="_blank">经济优先应对混乱 多项因素影响下的加拿大疫情告急</a>
+										</li>
+										<li class="news_content">　　11月25日，环球新闻报道安大略省的审计报告批评政府在应对疫情方面“拖延和混乱”，医疗专家在公共卫生政策上被置于次要地位，官僚体系并未从<em>SARS</em>疫情中汲取教训</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2020/12-05/9355246.shtml&nbsp;&nbsp;
+											2020-12-05 21:07:41
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2020/12-02/9352100.shtml" target="_blank">多例新冠妈妈新生儿自带抗体 抗体留存时间还有待观察</a>
+										</li>
+										<li class="news_content">，分娩时的母血样本也呈阳性。
+
+　　今年10月12日，专业期刊《Nature Communication》登出文章《Analysis of <em>SARS</em>-CoV</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2020/12-02/9352100.shtml&nbsp;&nbsp;
+											2020-12-02 02:51:26
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gj/2020/12-01/9351731.shtml" target="_blank">国际最新研究称，新冠病毒或能通过鼻子进入大脑</a>
+										</li>
+										<li class="news_content">京12月1日电 (记者 孙自法)施普林格·自然旗下专业学术期刊《自然-神经科学》最新发表一篇神经科学研究论文称，一项尸检研究显示，新冠病毒(<em>SARS</em>-CoV</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gj/2020/12-01/9351731.shtml&nbsp;&nbsp;
+											2020-12-01 17:42:12
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/sh/2020/11-29/9350310.shtml" target="_blank">张文宏：青年博士应冲在领域前沿 加强与世界沟通</a>
+										</li>
+										<li class="news_content">同一个研究方向。
+
+　　张文宏在分享中提到，让他比较自豪的是博士毕业以后一直有机会冲在医学前沿。2003年，刚博士毕业不久的他，就参与了抗击<em>SARS</em></li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/sh/2020/11-29/9350310.shtml&nbsp;&nbsp;
+											2020-11-29 19:36:53
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+						<table cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td valign="top">
+									
+								</td>
+								<td style="padding-left: 10px;" valign="top">
+									<ul class="news_item">
+										<li class="news_title">
+											<a href="http://www.chinanews.com/gn/2020/11-27/9348708.shtml" target="_blank">中山大学发布新冠病毒纳米颗粒疫苗研发成果</a>
+										</li>
+										<li class="news_content">疫苗，可以实现在单个纳米疫苗表面同时展示24个相同或不同的新冠病毒抗原。
+
+　　张辉团队对经过纳米颗粒疫苗免疫过的人源化鼠模型上进行了野生型<em>SARS</em>-CoV-2的呼吸道感染，发现未经免疫的小鼠肺部损伤严重，病毒复制迅速，并且</li>
+										<li class="news_space"></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<ul class="news_item">
+										<li class="news_other xh-highlight">http://www.chinanews.com/gn/2020/11-27/9348708.shtml&nbsp;&nbsp;
+											2020-11-27 11:33:28
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody></table>
+						<br>
+						
+					</div>
+					<!--news list end-->
+					<!--page start-->
+					<div id="page_bar">
+						<div id="pagediv"><span class="diabledpage">首页</span><span class="diabledpage">上一页</span><span class="thispage">1</span><a href="javascript:ongetkey(1)">2</a><a href="javascript:ongetkey(2)">3</a><a href="javascript:ongetkey(3)">4</a><a href="javascript:ongetkey(4)">5</a><a href="javascript:ongetkey(5)">6</a><a href="javascript:ongetkey(6)">7</a><a href="javascript:ongetkey(7)">8</a><a href="javascript:ongetkey(8)">9</a><a href="javascript:ongetkey(1)">下一页</a><a href="javascript:ongetkey(82)">尾页</a></div>
+
+					</div>
+				</td>
+				<td width="380" style="vertical-align: top;">
+					<!-- search result info end -->
+					<!-- search filter condition start -->
+					<table style="vertical-align: top" width="380" cellspacing="0" cellpadding="0" align="left" bgcolor="#ffffff" border="0">
+						<tbody><tr>
+							<td>
+								&nbsp;&nbsp;
+							</td>
+							<td width="1" bgcolor="#c9d7f1">
+								<img width="1" height="1" alt="">
+							</td>
+							<td>
+								&nbsp;&nbsp;
+							</td>
+							<td>
+								<div style="line-height: 25px;">
+									<p>
+										<span style="color: #666666"><b>排序方式</b>
+										</span>
+										<font size="-1"><br> 
+												
+                ·发表时间
+                ·<a href="javascript:queryFun(&#39;sort:_score&#39;)">相关度</a>
+												
+												
+											 </font>
+									</p>
+									<p>
+										<span style="color: #666666;"><b>按时间筛选结果</b>
+										</span>
+										<font size="-1"><br> 
+												
+												
+												
+												
+												
+												
+												
+			    ·<a href="javascript:queryFun(&#39;time_scope:1&#39;)">一天内</a>
+			   ·<a href="javascript:queryFun(&#39;time_scope:2&#39;)">两天内</a>
+                ·<a href="javascript:queryFun(&#39;time_scope:7&#39;)">一周内</a>
+                ·<a href="javascript:queryFun(&#39;time_scope:30&#39;)">一月内</a>
+                ·<a href="javascript:queryFun(&#39;time_scope:90&#39;)">三月内</a>
+                ·<a href="javascript:queryFun(&#39;time_scope:365&#39;)">过去一年</a>
+                ·全部
+			  
+											 </font>
+									</p>
+									<p>
+										<span style="color: #666666"><b>按频道筛选结果</b>
+										</span>
+										<font size="-1"><br> 
+												
+													
+			      ·全部
+														<br>
+													
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:gj&#39;)">国际频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:gn&#39;)">国内新闻</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:cj&#39;)">财经频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:fortune&#39;)">金融频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:stock&#39;)">证券频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:ga&#39;)">港澳频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:tw&#39;)">台湾频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:hr&#39;)">华人频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:sh&#39;)">社会新闻</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:df&#39;)">地方频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:fz&#39;)">法治频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:ty&#39;)">体育频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:yl&#39;)">娱乐频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:tp&#39;)">图片频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:sp&#39;)">视频频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:cul&#39;)">文化频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:hb&#39;)">华文报摘</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:edu&#39;)">教育频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:jk&#39;)">健康频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:auto&#39;)">汽车频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:ny&#39;)">能源频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:estate&#39;)">房产频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:life&#39;)">生活频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:it&#39;)">IT频道</a>
+														<br>
+													
+												
+											
+												
+													
+													
+			      ·<a href="javascript:queryFun(&#39;channel:wine&#39;)">葡萄酒频道</a>
+														<br>
+													
+												
+											 </font>
+									</p>
+									<p>
+										<span style="color: #666666"><b>更多搜索</b>
+										</span>
+										<font size="-1"><br> ·<a href="http://www.google.cn/search?hl=zh-CN&amp;q=sars&amp;meta=&amp;aq=f&amp;oq=" target="_blank">Google</a>
+										<br> ·<a href="http://www.baidu.com/s?ie=utf-8&amp;bs=%E4%B8+%9B%BD&amp;sr=&amp;z=&amp;cl=3&amp;f=8&amp;wd=sars&amp;ct=0" target="_blank">Baidu</a>
+										<br> ·<a href="http://one.cn.yahoo.com/s?p=sars&amp;pid=hp&amp;v=web" target="_blank">Yahoo</a> </font>
+									</p>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+
+		<!--page end-->
+		<!--search bar start-->
+		<div id="bottom_serach_bar">
+			<form name="sumitForm2" method="post" action="http://sou.chinanews.com/search.do" onsubmit="return submitFun()">
+				<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td align="right" valign="middle">
+                        <div style="padding-left:23px;float:left;width:515px;">
+                         <input type="text" name="q" id="q" class="q" autocomplete="off" value="sars" maxlength="40">
+                         <input type="button" name="submitBtn" class="submitBtn" value="  " onclick="return submitFun(&#39;f1&#39;)">  
+                                <div class="clear"></div>
+                                </div>
+							<div style="float:left;width:300px;padding-top:8px; text-align:left;font-size:14px;">
+                          	<img src="./中新网搜索_files/hand.gif">
+    	<a href="http://sou.chinanews.com/advSearch.do">
+    	<span style="color:blue;">进入高级搜索
+    	</span>
+    	</a>
+    	&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="http://sou.chinanews.com/help.jsp" target="_blank">使用帮助</a>
+                          </div>
+						</td>
+					</tr>
+				</tbody></table>
+			</form>
+		</div>
+		<!--search bar end-->
+		<!--copyright start-->
+		<div id="copyright">
+			©2008 CHINANEWS.COM.CN
+			<a href="http://www.miibeian.gov.cn/" target="_blank">[京ICP证040655号]</a>
+			<a href="http://www.chinanews.com/news/xuke.html" target="_blank">网上传播视听节目许可证(0106168)</a>
+			版权所有
+		</div>
+		<!--copyright end-->
+		<form name="sform" method="post" action="http://sou.chinanews.com/search.do">
+			<input type="hidden" name="q" value="sars">
+			<input type="hidden" name="ps" value="100">
+			<input type="hidden" name="time_scope" value="0">
+			<input type="hidden" name="channel" value="all">
+			<input type="hidden" name="sort" value="pubtime">
+			<input type="hidden" name="adv" value="1">
+			<input type="hidden" name="day1" value="">
+			<input type="hidden" name="day2" value="">
+			<input type="hidden" name="field" value="">
+			<input type="hidden" name="direction" value="">
+			<input type="hidden" name="pager" value="">
+		</form>
+
+		<form name="form2" method="post">
+			<input type="hidden" name="q" value="sars">
+			<input type="hidden" name="ps" value="100">
+			<input type="hidden" name="start" value="0">
+			<input type="hidden" name="type" value="">
+			<input type="hidden" name="sort" value="pubtime">
+			<input type="hidden" name="time_scope" value="0">
+			<input type="hidden" name="channel" value="all">
+			<input type="hidden" name="adv" value="1">
+			<input type="hidden" name="day1" value="">
+			<input type="hidden" name="day2" value="">
+			<input type="hidden" name="field" value="">
+			<input type="hidden" name="creator" value="">
+		</form>
+
+		<form action="http://sou.chinanews.com/imgsearch.do" name="imgform" method="post">
+			<input type="hidden" value="" name="q">
+		</form>
+		<form action="http://sou.chinanews.com/spsearch.do" name="spform" method="post">
+			<input type="hidden" value="" name="q">
+		</form>
+		<form action="http://sou.chinanews.com/search.do" name="wform" method="post">
+			<input type="hidden" value="" name="q">
+		</form>
+	
+<div style="position: fixed; left: 0px; top: 0px; z-index: 100000; transform: translate(1px, 1px);"></div><div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+      <div class="xl-chrome-ext-bar__logo"></div>
+
+      <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+      <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div><iframe src="./中新网搜索_files/bar.html" id="xh-bar" class=""></iframe></body></html>
